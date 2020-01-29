@@ -1,0 +1,315 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* position: relative; */
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ccc;
+  color: #fff;
+  line-height: 1.6;
+  height: 100vh;
+  max-width: 100vw;
+  /* overflow: hidden; */
+}
+
+.madagold {
+  /* text-align: center; */
+  padding: 10px;
+  background: black;
+}
+
+.mada {
+  padding: 0 5px;
+  color: darkred;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-right: 2px solid darkgreen;
+  background: darkgoldenrod;
+}
+
+.gold {
+  padding: 0 5px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-left: 2px solid darkgreen;
+  color: darkgoldenrod;
+  background: darkred;
+}
+
+.separator {
+  color: darkgreen;
+  width: 3px;
+}
+.welcome {
+  display: none;
+}
+
+.navbar {
+  display: none;
+}
+
+.menu-button {
+  position: absolute;
+  top: 13px;
+  right: 10px;
+  width: 42px;
+  height: 42px;
+  background: goldenrod;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* .menu-button.close {
+  display: none;
+} */
+
+.menu-bar {
+  /* position: absolute; */
+  width: 35px;
+  height: 3px;
+  background: darkred;
+  border-radius: 5px;
+  z-index: 20;
+}
+
+.menu-bar::before,
+.menu-bar::after {
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 3px;
+  background: darkred;
+  border-radius: 5px;
+  transition: all 0.5s;
+}
+
+.menu-bar::before {
+  transform: translateY(-10px);
+}
+
+.menu-bar::after {
+  transform: translateY(10px);
+}
+
+/* ANIMATION */
+.menu-button.open .menu-bar {
+  transform: translateX(-50px);
+  background: transparent;
+}
+
+.menu-button.open .menu-bar::before {
+  transform: rotate(-45deg) translate(35px, 35px);
+}
+
+.menu-button.open .menu-bar::after {
+  transform: rotate(45deg) translate(35px, -35px);
+}
+
+.side-menu {
+  position: absolute;
+  width: 150px;
+  height: 170px;
+  top: 0;
+  left: -155px;
+  background: #333;
+  z-index: 20;
+  transition: all 0.5s;
+}
+
+.side-menu.show-menu {
+  display: block;
+  left: 0;
+}
+
+.side-menu ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.side-menu ul li {
+  list-style: none;
+  /* margin: 9px 0; */
+  border-bottom: 1px dotted darkgreen;
+}
+
+.side-menu ul li a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: goldenrod;
+}
+
+.container {
+  /* margin-top: 60px; */
+  height: 100%;
+  width: 100%;
+  /* background: rgba(0, 0, 0, 0.9); */
+
+  /* smooth scroll here */
+  /* overflow-y: scroll;
+scroll-behavior: smooth;
+scroll-snap-type: y mandatory; */
+}
+
+@media screen and (min-width: 600px) {
+  .madagold {
+    display: none;
+  }
+
+  .welcome {
+    display: inline;
+  }
+
+  .menu-button {
+    display: none;
+  }
+  .navbar {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+  }
+
+  .navbar ul {
+    display: flex;
+    list-style-type: none;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .navbar ul li {
+    margin: 0 1rem;
+    padding: 1rem;
+  }
+
+  .navbar ul li a {
+    text-decoration: none;
+    color: darkgoldenrod;
+    text-transform: uppercase;
+    transition: all 0.5s;
+  }
+
+  .navbar ul li a:hover {
+    color: aliceblue;
+  }
+
+  .side-menu {
+    display: none;
+  }
+
+  .container {
+    margin-top: 60px;
+  }
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  scroll-snap-align: center;
+}
+
+section#home {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+    url("../img/IMG-20200124-WA0001.jpg") no-repeat center center/contain;
+  background-attachment: fixed;
+}
+
+section#vision {
+  background: linear-gradient(
+      0deg,
+      rgba(15, 15, 15, 0.9),
+      rgba(15, 15, 15, 0.9)
+    ),
+    url("../img/IMG-20200124-WA0002.jpg") no-repeat center center/contain;
+  background-attachment: fixed;
+}
+section#services {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+    url("../img/IMG-20200124-WA0003.jpg") no-repeat center center/contain;
+  background-attachment: fixed;
+}
+section#contact {
+  background: linear-gradient(
+      0deg,
+      rgba(15, 15, 15, 0.9),
+      rgba(15, 15, 15, 0.9)
+    ),
+    url("../img/IMG-20200124-WA0004.jpg") no-repeat center center/contain;
+  background-attachment: fixed;
+}
+
+section h1,
+section h2 {
+  color: darkred;
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+
+section p {
+  color: darkgoldenrod;
+}
+
+.card {
+  width: 80%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: max-content 300px 1fr;
+  height: 60%;
+  margin: 2rem 2rem;
+  padding: 1.5rem;
+  border: 1px solid darkgoldenrod;
+  border-radius: 3px;
+}
+
+.card header {
+  width: 100%;
+  /* height: 50px; */
+  border-radius: 5px;
+  background: rgba(184, 134, 11, 0.85);
+  text-align: center;
+}
+
+.content {
+  margin: 20px 0;
+  width: 100%;
+}
+
+.content .address {
+  width: 100%;
+}
+
+.address li {
+  list-style: none;
+  color: darkgoldenrod;
+}
+
+.footer {
+  height: 50px;
+  color: darkgreen;
+  background: goldenrod;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-mg {
+  font-weight: 300;
+  color: darkred;
+}
